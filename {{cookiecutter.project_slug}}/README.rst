@@ -157,10 +157,11 @@ the readme.*
         .. code-block:: bash
 
             bumpversion patch # (or minor or major)
+            git push
             git push --tags
 
-        As soon as this new tagged commit is merged into master (and passes
-        tests) travis will deploy for you
+        As soon as this new tagged commit passes tests, travis will deploy for
+        you
 
 
 {% else %}
