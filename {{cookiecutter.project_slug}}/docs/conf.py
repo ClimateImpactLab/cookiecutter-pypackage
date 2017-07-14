@@ -40,7 +40,19 @@ import {{ cookiecutter.project_slug }}
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.todo',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.extlinks',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.intersphinx']
+
+extlinks = {
+    'issue': ('https://github.com/ClimateImpactLab/DataFS/issues/%s', 'GH #'),
+    'pull': ('https://github.com/ClimateImpactLab/DataFS/pull/%s', 'PR #')}
+
+napoleon_numpy_docstring = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -56,7 +68,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'{{ cookiecutter.project_name }}'
-copyright = u"{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
+copyright = u"{% now 'local', '%Y' %}, {{ cookiecutter.github_organization }}"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -210,7 +222,7 @@ latex_elements = {
 latex_documents = [
     ('index', '{{ cookiecutter.project_slug }}.tex',
      u'{{ cookiecutter.project_name }} Documentation',
-     u'{{ cookiecutter.full_name }}', 'manual'),
+     u'{{ cookiecutter.github_organization }}', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at
@@ -241,7 +253,7 @@ latex_documents = [
 man_pages = [
     ('index', '{{ cookiecutter.project_slug }}',
      u'{{ cookiecutter.project_name }} Documentation',
-     [u'{{ cookiecutter.full_name }}'], 1)
+     [u'{{ cookiecutter.github_organization }}'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -256,7 +268,7 @@ man_pages = [
 texinfo_documents = [
     ('index', '{{ cookiecutter.project_slug }}',
      u'{{ cookiecutter.project_name }} Documentation',
-     u'{{ cookiecutter.full_name }}',
+     u'{{ cookiecutter.github_organization }}',
      '{{ cookiecutter.project_slug }}',
      'One line description of project.',
      'Miscellaneous'),
@@ -273,3 +285,8 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/2.7', None)
+}

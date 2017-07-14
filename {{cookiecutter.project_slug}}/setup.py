@@ -47,7 +47,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
+    url='https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}',
     packages=find_packages(include=['{{ cookiecutter.project_slug }}']),
     {%- if 'no' not in cookiecutter.command_line_interface|lower %}
     entry_points={
