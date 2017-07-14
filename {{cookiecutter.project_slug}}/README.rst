@@ -31,8 +31,8 @@
 Setting up this package
 -----------------------
 
-{{ cookiecutter.full_name }}: complete these instructions and then remove this section from
-the readme:
+*{{ cookiecutter.full_name }}: complete these instructions and then remove this section from
+the readme.*
 
 1.  Create a matching repository on github if you haven't already:
 
@@ -51,9 +51,9 @@ the readme:
         Privacy
             Public
 
-        **_Do not initialize the repo with a readme, license, or gitignore!_**
+        **Do not initialize the repo with a readme, license, or gitignore!**
 
-    c.  Create the repository
+    c.  Press the big green buttton
 
 2.  Execute the following commands in this directory:
 
@@ -97,6 +97,8 @@ the readme:
                 name you may have to rename the docs.
         iv.     next time you push code to master, docs should build
                 automatically. You can view them at
+                https://{{ cookiecutter.project_slug }}.readthedocs.io/en/latest/
+                (substitute whatever name you chose).
 
 
     c.  Set up updates
@@ -139,10 +141,33 @@ the readme:
 
                     python setup.py register
 
+{%- if cookiecutter.use_pypi_deployment_with_travis  == 'y' %}
+        iii.    Encrypt & package your credentials so travis can deploy for you:
+
+                .. code-block:: bash
+
+                    python travis_pypi_setup.py
+
     b.  When you're ready to deploy this package, run:
 
+        .. code-block:: bash
+
+            bumpversion patch # (or minor or major)
+            git push --tags
+
+        As soon as this new tagged commit is merged into master (and passes
+        tests) travis will deploy for you
+
+{% else %}
+    b.  When you're ready to deploy this package, run:
+
+        .. code-block:: bash
+
+            bumpversion patch # (or minor or major)
+            git push --tags
             make release
 
+{%- endif %}
     c.  Anyone (in the world) should now be able to install your package with
 
         .. code-block:: bash
