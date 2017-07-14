@@ -151,7 +151,8 @@ the readme.*
 
                     python travis_pypi_setup.py
 
-    b.  When you're ready to deploy this package, run:
+    b.  When you're ready to deploy this package, make sure all your changes are
+        committed. Then run:
 
         .. code-block:: bash
 
