@@ -113,9 +113,10 @@ the readme.*
 
         i.      next up: https://coveralls.io. you got this.
 
-    e.  Breathe easy. That wasn't so bad, was it?
+    e.  Breathe easy. The next time you push code, these should all update for
+        you! Now that wasn't so bad, was it?
 
-4.  Use github:
+4.  Develop with github:
 
     a.  In general, it's best to file an issue when you want to change something
         or when you've found a bug, then write tests which test a-priori
@@ -141,7 +142,9 @@ the readme.*
 
                     python setup.py register
 
+
 {%- if cookiecutter.use_pypi_deployment_with_travis  == 'y' %}
+
         iii.    Encrypt & package your credentials so travis can deploy for you:
 
                 .. code-block:: bash
@@ -158,7 +161,9 @@ the readme.*
         As soon as this new tagged commit is merged into master (and passes
         tests) travis will deploy for you
 
+
 {% else %}
+
     b.  When you're ready to deploy this package, run:
 
         .. code-block:: bash
@@ -167,7 +172,9 @@ the readme.*
             git push --tags
             make release
 
+
 {%- endif %}
+
     c.  Anyone (in the world) should now be able to install your package with
 
         .. code-block:: bash
