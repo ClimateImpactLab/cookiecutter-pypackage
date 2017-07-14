@@ -30,7 +30,7 @@ Build Status
 
 Linux:
 
-.. image:: https://img.shields.io/travis/ClimateImpactLab/cookiecutter-pypackage.svg
+.. image:: https://img.shields.io/travis/ClimateImpactLab/cookiecutter-pypackage.svg?branch=master
     :target: https://travis-ci.org/ClimateImpactLab/cookiecutter-pypackage
     :alt: Linux build status on Travis CI
 
