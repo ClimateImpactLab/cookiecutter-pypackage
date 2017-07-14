@@ -36,8 +36,8 @@ Linux:
 
 Windows:
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/ClimateImpactLab/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/ClimateImpactLab/cookiecutter-pypackage/branch/master
+.. image:: https://ci.appveyor.com/api/projects/status/jvjb7rcdkighq26h/branch/master?svg=true
+    :target: https://ci.appveyor.com/project/delgadom/cookiecutter-pypackage/branch/master
     :alt: Windows build status on Appveyor
 
 Quickstart
