@@ -51,9 +51,9 @@ the readme:
         Privacy
             Public
 
-        **_Do not initialize the repo with a readme, license, or gitignore!_**
+        **Do not initialize the repo with a readme, license, or gitignore!**
 
-    c.  Create the repository
+    c.  Press the big green buttton
 
 2.  Execute the following commands in this directory:
 
@@ -97,6 +97,8 @@ the readme:
                 name you may have to rename the docs.
         iv.     next time you push code to master, docs should build
                 automatically. You can view them at
+                https://{{ cookiecutter.project_slug }}.readthedocs.io/en/latest/
+                (substitute whatever name you chose).
 
 
     c.  Set up updates
