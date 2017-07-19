@@ -6,7 +6,6 @@ python:
   - 3.5
   - 3.4
   - 2.7
-  - pypy-5.4.1
 
 env:
   matrix:
@@ -14,10 +13,6 @@ env:
     - TEST_ENV=conda
 
 matrix:
-  exclude:
-    - python: pypy-5.4.1
-      env: TEST_ENV=conda
-
   allow_failures:
     - python: 3.4
       env: TEST_ENV=conda
