@@ -71,3 +71,6 @@ deploy:
     repo: {{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
     python: 2.7
 {%- endif %}
+
+after_success:
+  - coveralls
