@@ -95,7 +95,9 @@ the readme.*
                 project. The name has to be globally unique (not just within
                 the {{ cookiecutter.github_organization }}), so if you chose something with a common
                 name you may have to rename the docs.
-        iv.     next time you push code to master, docs should build
+        iv.     go to the settings page for your new docs site, and navigate to the 'advanced settings' tab.
+                add `requirements_rtd.txt` to the "requirements file" field.
+        v.      next time you push code to master, docs should build
                 automatically. You can view them at
                 https://{{ cookiecutter.project_slug }}.readthedocs.io/en/latest/
                 (substitute whatever name you chose).
