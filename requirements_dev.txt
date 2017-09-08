@@ -1,5 +1,5 @@
 PyYAML==3.12
-pytest==3.2.1
+pytest==3.2.2
 tox==2.7.0
 cryptography==2.0.3
 cookiecutter>=1.4.0
