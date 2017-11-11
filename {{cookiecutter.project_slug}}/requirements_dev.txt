@@ -11,4 +11,4 @@ cryptography==2.1.1
 PyYAML==3.12{% endif %}
 pytest==3.2.3
 pytest-cov==2.5.1
-pytest-runner==2.12.1
+pytest-runner==3.0
