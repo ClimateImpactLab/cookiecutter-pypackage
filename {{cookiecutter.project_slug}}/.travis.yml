@@ -4,19 +4,13 @@
 language: python
 python:
   - 3.5
-  - 3.4
+  - 3.6
   - 2.7
 
 env:
   matrix:
     - TEST_ENV=tox
     - TEST_ENV=conda
-
-matrix:
-  allow_failures:
-    - python: 3.4
-      env: TEST_ENV=conda
-
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
@@ -32,11 +26,10 @@ install:
       hash -r;
       conda config --set always_yes yes --set changeps1 no;
       conda update -q conda;
-      conda config --add channels conda-forge;
       conda info -a;
 
-      conda create -q -n test-env python=$TRAVIS_PYTHON_VERSION;
-      source activate test-env;
+      conda create -n test_env python=$TRAVIS_PYTHON_VERSION --yes;
+      source activate test_env;
 
       python setup.py install;
       python -m pip install -r requirements_dev.txt;
@@ -48,10 +41,8 @@ install:
 # command to run tests, e.g. python setup.py test
 script:
   - if [[ "$TEST_ENV" == "conda" ]]; then
-      export PATH=$HOME/miniconda/bin:$PATH;
-      source activate test-env;
-      python -m pytest;
-      sphinx-apidoc -o docs {{ cookiecutter.project_slug }};
+      pytest &&
+      sphinx-apidoc -o docs {{ cookiecutter.project_slug }} &&
       sphinx-build -W -b html -d docs/_build/doctrees docs/. docs/_build/html;
     else
       tox;
