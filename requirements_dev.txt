@@ -1,4 +1,4 @@
-PyYAML==3.13
+PyYAML==5.1.2
 pytest==4.0.1
 tox==3.5.3
 cookiecutter>=1.4.0
