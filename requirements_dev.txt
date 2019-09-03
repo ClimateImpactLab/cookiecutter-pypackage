@@ -1,6 +1,6 @@
 PyYAML==3.13
 pytest==4.0.1
-tox==3.5.3
+tox==3.14.0
 cookiecutter>=1.4.0
 pytest-cookies==0.3.0
 alabaster==0.7.12
